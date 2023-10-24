@@ -6,6 +6,9 @@ public class Producto {
     private double precio;
     private int codigo;
 
+    public Producto() {
+    }
+
     // Constructor
     public Producto(String nombre, double precio, int codigo) {
         this.nombre = nombre;

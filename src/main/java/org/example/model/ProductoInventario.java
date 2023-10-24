@@ -6,6 +6,9 @@ public class ProductoInventario extends Producto {
     private String urlFoto;
     private int cantidad;
 
+    public ProductoInventario() {
+    }
+
     public ProductoInventario(String nombre, double precio, int codigo, String descripcion, String categoria, String urlFoto, int cantidad) {
         super(nombre, precio, codigo);
         this.descripcion = descripcion;

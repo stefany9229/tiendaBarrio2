@@ -6,7 +6,7 @@ import org.example.services.MenuPrincipal;
 import org.example.utilsProject.DataLoader;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
+        public static void main(String[] args) throws InterruptedException {
 
 
 
