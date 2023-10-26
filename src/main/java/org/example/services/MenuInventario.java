@@ -220,7 +220,18 @@ public class MenuInventario {
 
             case 5:
 
-                System.out.println(this.tienda.getInventario());
+               this.tienda.getInventario().getProductosInventario().forEach(productoInvent ->
+               {
+                   System.out.println("codigo: " + productoInvent.getCodigo());
+                   System.out.println("nombre: " + productoInvent.getNombre());
+                   System.out.println("precio: " + productoInvent.getPrecio());
+                   System.out.println("descripcion: " + productoInvent.getDescripcion());
+                   System.out.println("categoria: " + productoInvent.getCategoria());
+                   System.out.println("urlfoto: " + productoInvent.getUrlFoto());
+                   System.out.println("Cantidad en inventario: " + productoInvent.getCantidad());
+                   System.out.println();
+               })
+            ;
                 System.out.println("presione enter para continuar");
                 scanner.nextLine();
                 this.mostrarOpciones();

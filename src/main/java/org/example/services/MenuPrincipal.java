@@ -8,10 +8,12 @@ public class MenuPrincipal {
 
     Tienda tienda;
     MenuInventario menuInventario;
+    MenuVentas menuVentas;
 
     public MenuPrincipal(Tienda tienda) {
         this.tienda = tienda;
         this.menuInventario = new MenuInventario(tienda, this);  // Pasamos 'this' al constructor
+        this.menuVentas= new MenuVentas(tienda, this);
     }
 
     public  void  menu(){
@@ -33,10 +35,10 @@ public class MenuPrincipal {
                 this.menuInventario.mostrarOpciones();
                 break;
             case 2:
-                System.out.println("trabajando en ");
+                this.menuVentas.efectuarVenta();
                 break;
             case 3:
-                System.out.println("Miércoles");
+                this.menuVentas.mostrarInventarioVentas();
                 break;
             case 4:
                 System.out.println("Jueves");

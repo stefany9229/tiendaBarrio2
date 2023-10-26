@@ -1,5 +1,5 @@
 package org.example.model;
-public class Producto {
+public class Producto implements Comparable {
 
     // Atributos
     private String nombre;
@@ -41,6 +41,8 @@ public class Producto {
         this.precio = precio;
     }
 
+
+
     @Override
     public String toString() {
         return "Producto{" +
@@ -48,5 +50,24 @@ public class Producto {
                 ", precio=" + precio +
                 ", codigo=" + codigo +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Producto otroProducto = (Producto) o;
+        if (this.nombre.equals(otroProducto.nombre)) {
+            return 0;
+        }
+
+        // Si los códigos son iguales, consideramos los productos iguales
+        if (this.codigo == otroProducto.codigo) {
+            return 0;
+        }
+
+        // En caso contrario, podemos ordenarlos por nombre como default
+        // o por cualquier otro criterio
+        return this.nombre.compareTo(otroProducto.nombre);
+
+
     }
 }

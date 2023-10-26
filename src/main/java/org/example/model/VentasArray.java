@@ -6,11 +6,11 @@ import java.util.List;
 
 
     public class VentasArray {
-        private List<Venta> ventas;
+        private List<Venta> ventaList;
 
         // Constructor
         public VentasArray() {
-            this.ventas = new ArrayList<>();
+            this.ventaList = new ArrayList<>();
         }
 
         // Métodos
@@ -18,7 +18,7 @@ import java.util.List;
 
         public double calcularVentasTotal() {
             double totalVentas = 0.0;
-            for(Venta venta : ventas) {
+            for(Venta venta : ventaList) {
                 totalVentas += venta.getTotal();
             }
             return totalVentas;
@@ -30,20 +30,24 @@ import java.util.List;
          * @param venta La venta que se desea agregar.
          */
         public void agregarVenta(Venta venta) {
-            this.ventas.add(venta);
+            this.ventaList.add(venta);
         }
 
         // Getter para lineaVentas si es necesario
 
         public List<Venta> getLineaVentas() {
-            return ventas;
+            return ventaList;
+        }
+
+        public List<Venta> getVentaList() {
+            return ventaList;
         }
 
         @Override
         public String toString() {
             String resultado="VentasArray{";
 
-            for(Venta venta: ventas ){
+            for(Venta venta: ventaList){
                 resultado += (venta.toString() + "\n");
             }
             resultado += "}";

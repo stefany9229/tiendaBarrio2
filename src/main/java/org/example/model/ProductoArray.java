@@ -85,6 +85,9 @@ public class ProductoArray {
         this.productosInventario = productosInventario;
     }
 
+    public List<ProductoInventario> getProductosInventario() {
+        return productosInventario;
+    }
 
     @Override
     public String toString() {
