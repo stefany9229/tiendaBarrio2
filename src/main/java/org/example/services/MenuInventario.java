@@ -84,19 +84,29 @@ public class MenuInventario {
 
                 String entrada = scanner.nextLine();
 
-
+                ProductoInventario producto;
                 try {
                     int codigo = Integer.parseInt(entrada);
                     // Si llegamos a este punto, la conversión fue exitosa.
                     // Aquí puedes manejar la entrada como un entero.
                     //System.out.println("la tiendo que tengo es " + tienda);
-                    System.out.println(this.tienda.getInventario().consultarProducto(codigo));
+                    producto= (ProductoInventario) this.tienda.getInventario().consultarProducto(codigo);
+
                 } catch (NumberFormatException e) {
                     // Si ocurre una excepción, entonces la entrada es un String que no puede ser convertido a entero.
                     // Aquí puedes manejar la entrada como un String.
 
-                    System.out.println(this.tienda.getInventario().consultarProducto(entrada));
+                    producto = (ProductoInventario) this.tienda.getInventario().consultarProducto(entrada);
                 }
+
+                System.out.println("codigo: " + producto.getCodigo());
+                System.out.println("nombre: " + producto.getNombre());
+                System.out.println("precio: " + producto.getPrecio());
+                System.out.println("descripcion: " + producto.getDescripcion());
+                System.out.println("categoria: " + producto.getCategoria());
+                System.out.println("urlfoto: " + producto.getUrlFoto());
+                System.out.println("Cantidad en inventario: " + producto.getCantidad());
+                System.out.println();
 
                 System.out.println("presione enter para continuar");
                 scanner.nextLine();

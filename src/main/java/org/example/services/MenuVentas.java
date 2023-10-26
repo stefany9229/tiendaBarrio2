@@ -112,10 +112,13 @@ public class MenuVentas {
 
         //System.out.println(tienda.getInvetarioVentas());
         Consumer<Venta> soutPrint = venta ->{
+            System.out.println("------------------------------------------------------------");
             System.out.println("fecha: " + venta.getFecha() );
             System.out.println("total: " + venta.getTotal());
             System.out.println("productos:  ");
             venta.getLineasVenta().forEach(lineaVenta -> System.out.println("  "  + lineaVenta) );
+            System.out.println();
+            System.out.println("------------------------------------------------------------");
             System.out.println();
         };
 
